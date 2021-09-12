@@ -1,5 +1,5 @@
 //=============================================================================
-// rmmz_objects.js v1.3.0
+// rmmz_objects.js v1.3.2
 //=============================================================================
 
 //-----------------------------------------------------------------------------
@@ -11280,7 +11280,8 @@ Game_Interpreter.prototype.pluginCommand = function() {
 
 // Plugin Command
 Game_Interpreter.prototype.command357 = function(params) {
-    PluginManager.callCommand(this, params[0], params[1], params[3]);
+    const pluginName = Utils.extractFileName(params[0]);
+    PluginManager.callCommand(this, pluginName, params[1], params[3]);
     return true;
 };
 
